@@ -1342,8 +1342,6 @@ class CmdNuageVrfShow(gdb.Command):
 
                     if vnode['vrf_agg_flow_type'] == 0:
                         print("\n\nAggregate flow mode: No\n")
-                    # print("\naggregate flow mode: {}\n".
-                    #     format(vnode['vrf_agg_flow_type']))
 
 #
 # Implements the GDB "evpn_show" command
@@ -1516,9 +1514,6 @@ class CmdNuageEvpnShow(gdb.Command):
                                             str(netaddr.IPAddress(socket.ntohl(int(vm_port['vm_subnet'])))), 
                                             str(netaddr.IPAddress(socket.ntohl(int(vm_port['vm_gw']))))))
 
-                                    # print("IP: {}\t subnet: {}\t GW: {}\t IPv6: {}\t Ipv6 subnet: {}\t IPv6 GW: {}\t".
-                                    #     format(vm_port['vm_ip'], vm_port['vm_subnet'], vm_port['vm_gw'], vm_port['vm_ipv6'], vm_port['vm_subnetv6'], vm_port['vm_gwv6']))
-
                     print("\n\nEvpn Arp Vips: {}\n".
                         format(vnode['evpn_arp_vips']))
 
@@ -1565,7 +1560,6 @@ class CmdNuageVrfList(gdb.Command):
                                     "struct vrf", "cmap_node"):
                         print("vrfs: {}".
                             format(hex(int(vnode['vrf_id']))))
-
 
 #
 # Implements the GDB "evpn_list" command
